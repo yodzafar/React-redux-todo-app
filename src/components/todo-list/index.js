@@ -4,15 +4,17 @@ import {TodoListItem} from "../todo-list-item";
 /*Styles*/
 import './todo-list.css'
 
-export const TodoList = ({items}) => {
+export const TodoList = ({items, taskDone, deleteTask}) => {
     return (
       <ul className='todo-list'>
         {items.map(item => {
-            const {id, ...itemProps} = item;
+            const {id} = item;
           return (
               <TodoListItem
-                  key={item.id}
-                  {...itemProps}
+                  key={id}
+                  {...item}
+                  taskDone={taskDone}
+                  deleteTask={deleteTask}
               />
           )
         })}

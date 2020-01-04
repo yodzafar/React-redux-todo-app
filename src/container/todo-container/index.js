@@ -1,7 +1,7 @@
 /*Libraries*/
 import React, {Fragment, Component} from "react";
 import {connect} from "react-redux";
-import {addTask} from "../../reducers/todos/actions";
+import {addTask, taskDone, deleteTask} from "../../reducers/todos/actions";
 
 /*Components*/
 import {Header} from "../../components/header";
@@ -10,13 +10,17 @@ import {TodoList} from "../../components/todo-list";
 
 class TodoContainer extends Component{
        render() {
-            const {tasks, addTask} = this.props;
+            const {tasks, addTask, taskDone, deleteTask} = this.props;
             const doneCount  = tasks.length -  tasks.filter(item => !item.completed).length;
             return (
             <Fragment>
               <Header tasksCount={tasks.length} done={doneCount}/>
               <AddTask addTask={addTask}/>
-                <TodoList items={tasks} />
+                <TodoList
+                    items={tasks}
+                    taskDone={taskDone}
+                    deleteTask={deleteTask}
+                />
             </Fragment>
         );
     }
@@ -24,7 +28,7 @@ class TodoContainer extends Component{
 
 export default connect(
     ({tasks}) => ({tasks}),
-    {addTask}
+    {addTask, taskDone, deleteTask}
     )(TodoContainer)
 
 

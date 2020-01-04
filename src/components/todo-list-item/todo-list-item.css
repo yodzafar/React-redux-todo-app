@@ -1,0 +1,37 @@
+.todo-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.label {
+    padding: 4px 10px;
+    font-weight: 500;
+    border: 1px solid #c4bddc;
+    border-right: 0;
+    border-left: 0;
+    background-color: #e7e0ff;
+    flex-grow: 1;
+    transition: .2s ease;
+}
+
+.label.done {
+    text-decoration: line-through;
+    background-color: #b9ffd4;
+    border-color: #90cba2;
+}
+
+.done-btn {
+    background-color: #23ba48;
+}
+
+.delete-btn{
+    background-color: #ff442a;
+}
+
+.action-btn{
+    height: 34px;
+    border: 0;
+    width: 34px;
+    color: #fff;
+}
