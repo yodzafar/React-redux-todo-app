@@ -1,0 +1,25 @@
+.add-task{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.add-task-btn{
+    min-width: 100px;
+    border-radius: 0 4px 4px 0;
+}
+
+.add-task-btn:focus{
+    box-shadow: unset;
+}
+
+.task-input{
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+}
+
+.task-input:focus{
+    box-shadow: unset;
+    border-color: #0062cc;
+}
