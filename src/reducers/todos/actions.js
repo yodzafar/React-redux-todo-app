@@ -1,4 +1,4 @@
-import {ADD_TODO, DELETE_TASK, TASK_DONE} from "../../constants/action-types";
+import {ADD_TODO, CLEAR_ALL, CLEAR_COMPLETED, DELETE_TASK, TASK_DONE} from "../../constants/action-types";
 
 export const addTask = (id, label, completed) => {
     return {
@@ -23,3 +23,17 @@ export const deleteTask = (id) => {
         id
     }
 };
+
+export const clearCompleted = (completed) => {
+    return {
+        type:CLEAR_COMPLETED,
+        completed
+    }
+};
+
+export const clearAll = () => {
+    return{
+        type:CLEAR_ALL
+    }
+};
+

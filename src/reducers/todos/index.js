@@ -1,4 +1,4 @@
-import {ADD_TODO, DELETE_TASK, TASK_DONE} from "../../constants/action-types";
+import {ADD_TODO, CLEAR_ALL, CLEAR_COMPLETED, DELETE_TASK, TASK_DONE} from "../../constants/action-types";
 
 const todoList = [
   {
@@ -35,6 +35,10 @@ export const tasks = (state = todoList, action) => {
           completed: action.completed
         }
       ];
+
+    case CLEAR_ALL:
+      return [];
+
     case TASK_DONE:
           return [...state].map(task => {
             if (task.id === action.id){
@@ -42,8 +46,13 @@ export const tasks = (state = todoList, action) => {
             }
             return task
           });
+
     case DELETE_TASK:
       return [...state].filter(item => item.id !== action.id);
+
+    case CLEAR_COMPLETED:
+      return [...state].filter(item => item.completed === false);
+
     default:
       return state
   }

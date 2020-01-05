@@ -1,0 +1,13 @@
+.mass-action{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.clear-complete{
+    margin-right: 5px;
+}
+
+.clear-all{
+    margin-left: 5px;
+}
