@@ -21,17 +21,23 @@
     border-color: #90cba2;
 }
 
+.action-btn{
+    height: 34px;
+    border: 0;
+    width: 34px;
+    color: #fff;
+}
+
 .done-btn {
-    background-color: #23ba48;
+    background-color: #ededed;
+    color: #999;
 }
 
 .delete-btn{
     background-color: #ff442a;
 }
 
-.action-btn{
-    height: 34px;
-    border: 0;
-    width: 34px;
+.done-btn.done {
+    background-color: #23ba48;
     color: #fff;
 }

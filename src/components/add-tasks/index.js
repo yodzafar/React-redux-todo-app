@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 import './add-task.css'
 
-export class AddTask extends Component {
+export class AddTask1 extends Component {
 
   state = {
     value: ''
@@ -14,16 +14,14 @@ export class AddTask extends Component {
     if (value.length > 3) {
       this.setState({value: ''});
       addTask(new Date().getTime(), value, false);
+      this.setState({value: ''})
     }
-
   }
 
-  handleChange = ({target}) => {
-    this.setState({value: target.value})
-  };
+
 
   handleAdd = () => {
-    this.addItem()
+    this.addItem();
     this.setState({value: ''})
   };
 
@@ -46,5 +44,25 @@ export class AddTask extends Component {
         </div>
     )
   }
-
 };
+
+
+export const AddTask = ({value, onChange, addTask}) =>{
+  return (
+      <div className='add-task'>
+        <input
+            type="text"
+            placeholder='New task'
+            className='form-control task-input'
+            value={value}
+            onChange={onChange}
+        />
+        <button
+            className='btn btn-primary add-task-btn'
+            onClick={addTask}
+        >
+          Add task
+        </button>
+      </div>
+  )
+}

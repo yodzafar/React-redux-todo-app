@@ -1,30 +1,15 @@
 import {ADD_TODO, CLEAR_ALL, CLEAR_COMPLETED, DELETE_TASK, TASK_DONE} from "../../constants/action-types";
+import { load } from 'redux-localstorage-simple'
 
-const todoList = [
-  {
-    id: 1,
-    label: 'Drink Coffee',
-    completed: true
-  },
+let todoList = load({namespace: 'todo-list'});
 
-  {
-    id: 2,
-    label: 'Listen to music',
-    completed: true
-  },
-  {
-    id: 3,
-    label: 'Go to walk',
-    completed: false
-  },
-  {
-    id: 4,
-    label: 'Have a lunch',
-    completed: false
-  },
-];
+if (!todoList || !todoList.tasks || !todoList.tasks.length){
+  todoList = {
+    tasks:[]
+  }
+}
 
-export const tasks = (state = todoList, action) => {
+export const tasks = (state = todoList.tasks, action) => {
   switch (action.type) {
     case ADD_TODO:
       return [

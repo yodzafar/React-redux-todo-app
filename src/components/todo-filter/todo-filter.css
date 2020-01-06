@@ -1,0 +1,5 @@
+.filter-btn-wrap{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 5px;
+}

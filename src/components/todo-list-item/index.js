@@ -6,7 +6,7 @@ export const TodoListItem = ({label, completed, id, taskDone, deleteTask}) => {
     const done = completed ? 'done' : '';
     return (
         <li id={id} className={`todo-list-item ${done}`}>
-          <button className="action-btn done-btn" onClick={() =>taskDone(id)}>
+          <button className={`action-btn done-btn ${done}`} onClick={() =>taskDone(id)}>
             <i className='fa fa-check'></i>
           </button>
             <span className={`label ${done}`} >

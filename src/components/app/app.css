@@ -20,3 +20,9 @@ body {
     margin-left: auto;
     font-size: 14px;
 }
+
+.todo-actions{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
