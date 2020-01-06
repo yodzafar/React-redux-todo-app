@@ -16,9 +16,4 @@ const configureStore = preloadedState => (
     )
 );
 
-// const store = createStore(
-//     rootReducer,
-//     composeWithDevTools()
-// );
-
 export const store = configureStore({});
